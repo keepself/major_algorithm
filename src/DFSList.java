@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DFSList {
@@ -17,6 +18,7 @@ public class DFSList {
             addEdge(a[0], a[1]);
         }
         System.out.println(adjList);
+        dfs(0);
     }
 
     static void addEdge(int a, int b) {
@@ -27,6 +29,7 @@ public class DFSList {
     static void dfs(int start) {
         System.out.println(start + ",");
         visited[start] = true;
+        System.out.println(Arrays.toString(visited));
         for (int target : adjList.get(start)) {
             if (!visited[target]) {
                 dfs(target);
